@@ -9,6 +9,7 @@ import {
   insertFranchiseApplicationSchema, insertSupportTicketSchema
 } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import opticalMeasurementRouter from './optical-measurement-endpoint';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -1425,6 +1426,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: "Failed to create notification" });
     }
   });
+
+  app.use('/api', opticalMeasurementRouter);
 
   // Criar servidor HTTP
   const httpServer = createServer(app);
