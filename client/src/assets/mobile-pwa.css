@@ -1,0 +1,39 @@
+/* Menu lateral para celulares - versão direta que funciona */
+.sidebar {
+  /* Estilos base para todas as telas */
+  background-color: #59207D !important;
+  overflow-y: auto !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Estilo em telas pequenas (dispositivos móveis) */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    display: flex !important; /* Sempre forçar display flex */
+    position: fixed !important;
+    z-index: 9999 !important;
+    width: 85% !important;
+    max-width: 280px !important;
+    height: 100vh !important;
+    top: 0 !important;
+    left: -280px !important; /* Começa fora da tela */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3) !important;
+  }
+  
+  /* Quando o menu está aberto */
+  .sidebar-open {
+    left: 0 !important;
+  }
+}
+
+/* Menu sempre visível em telas maiores */
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 288px !important; /* 72 * 4 = 288px */
+    height: 100vh !important;
+  }
+}

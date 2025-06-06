@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para aplicativo PWA */
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  /* Mostra a sidebar no modo PWA em dispositivos móveis */
+  .sidebar-pwa {
+    display: flex !important;
+    width: 250px !important;
+    position: fixed !important;
+    z-index: 50 !important;
+    height: 100vh !important;
+  }
+  
+  /* Ajusta o conteúdo principal no modo PWA quando a sidebar está visível */
+  .main-content-pwa {
+    margin-left: 250px !important;
+  }
+}
+
+/* Estilos do menu - simplificados */
+.sidebar {
+  transition: transform 0.3s ease;
+}
+
+.sidebar-open {
+  transform: translateX(0) !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav {
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay para menu lateral */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+.overlay-visible {
+  display: block;
+}
+
+/* Estilos para melhorar a navegação em dispositivos móveis */
+@media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  .main-content {
+    padding-bottom: 80px; /* Espaço para a barra de navegação inferior */
+  }
+  
+  /* Garante que o menu inferior sempre apareça */
+  .mobile-nav {
+    display: flex !important;
+  }
+}
+
+@layer base {
+  :root {
+    /* Nubank-inspired colors */
+    --background: 271 70% 95%; /* Light purple background */
+    --foreground: 271 60% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 271 60% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 271 60% 15%;
+    --primary: 271 80% 44%; /* Purple brand color - Nubank purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 271 80% 65%;
+    --primary-dark: 271 80% 35%;
+    --secondary: 36 100% 50%; /* Orange brand color */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 36 100% 60%;
+    --secondary-dark: 36 100% 40%;
+    --muted: 271 30% 95%;
+    --muted-foreground: 271 30% 40%;
+    --accent: 36 100% 50%; /* Orange accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 271 30% 90%;
+    --input: 271 30% 90%;
+    --ring: 271 80% 44%;
+    --radius: 1rem; /* Nubank uses more rounded corners */
+    --chart-1: 271 80% 44%;
+    --chart-2: 36 100% 50%;
+    --chart-3: 201 96% 32%;
+    --chart-4: 338 95% 41%;
+    --chart-5: 123 65% 48%;
+    --sidebar-background: 271 80% 44%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 271 80% 44%;
+    --sidebar-accent: 271 100% 70%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 271 80% 40%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  .dark {
+    /* Nubank-inspired dark theme */
+    --background: 271 80% 10%;
+    --foreground: 0 0% 98%;
+    --card: 271 70% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 271 70% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 271 80% 44%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 271 80% 60%;
+    --primary-dark: 271 80% 35%;
+    --secondary: 36 100% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 36 100% 60%;
+    --secondary-dark: 36 100% 40%;
+    --muted: 271 30% 20%;
+    --muted-foreground: 271 15% 70%;
+    --accent: 271 100% 65%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 271 30% 25%;
+    --input: 271 30% 25%;
+    --ring: 271 80% 44%;
+    --chart-1: 271 80% 60%;
+    --chart-2: 36 100% 60%;
+    --chart-3: 201 96% 45%;
+    --chart-4: 338 95% 60%;
+    --chart-5: 123 65% 60%;
+    --sidebar-background: 271 80% 35%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 271 80% 44%;
+    --sidebar-accent: 271 100% 70%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 271 80% 25%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+/* Animation Classes */
+.slide-up-fade-in {
+  animation: slideUpFadeIn 0.5s ease forwards;
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary-light));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+.loader {
+  border-top-color: hsl(var(--primary));
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

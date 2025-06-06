@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eye outline (orange) -->
+  <path d="M20 50 C20 30, 50 5, 90 50 C50 95, 20 70, 20 50 Z" fill="none" stroke="#FF9933" stroke-width="6"/>
+  <path d="M160 50 C160 30, 130 5, 90 50 C130 95, 160 70, 160 50 Z" fill="none" stroke="#FF9933" stroke-width="6"/>
+  
+  <!-- Eye center (purple) -->
+  <ellipse cx="90" cy="50" rx="40" ry="30" fill="#59207D"/>
+  
+  <!-- Plus sign (orange) -->
+  <rect x="80" y="30" width="20" height="40" fill="#FF9933"/>
+  <rect x="70" y="40" width="40" height="20" fill="#FF9933"/>
+  
+  <!-- Text "VISÃO+" (purple with orange +) -->
+  <text x="180" y="70" font-family="Arial" font-weight="bold" font-size="40" fill="#59207D">VISÃO</text>
+  <text x="270" y="70" font-family="Arial" font-weight="bold" font-size="40" fill="#FF9933">+</text>
+</svg>

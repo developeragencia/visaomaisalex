@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background with padding for maskable icons -->
+  <rect width="512" height="512" fill="#5E35B1" />
+  
+  <!-- Glasses Icon (centered with more padding for maskable area) -->
+  <g fill="#FFFFFF" transform="translate(116, 176)">
+    <!-- Left lens -->
+    <path d="M70,0 C31.3401,0 0,31.3401 0,70 C0,108.6599 31.3401,140 70,140 C108.6599,140 140,108.6599 140,70 C140,31.3401 108.6599,0 70,0 Z M70,23.3333 C95.7733,23.3333 116.6667,44.2267 116.6667,70 C116.6667,95.7733 95.7733,116.6667 70,116.6667 C44.2267,116.6667 23.3333,95.7733 23.3333,70 C23.3333,44.2267 44.2267,23.3333 70,23.3333 Z" />
+    
+    <!-- Right lens -->
+    <path d="M210,0 C171.3401,0 140,31.3401 140,70 C140,108.6599 171.3401,140 210,140 C248.6599,140 280,108.6599 280,70 C280,31.3401 248.6599,0 210,0 Z M210,23.3333 C235.7733,23.3333 256.6667,44.2267 256.6667,70 C256.6667,95.7733 235.7733,116.6667 210,116.6667 C184.2267,116.6667 163.3333,95.7733 163.3333,70 C163.3333,44.2267 184.2267,23.3333 210,23.3333 Z" />
+    
+    <!-- Bridge -->
+    <rect x="116.6667" y="58.3333" width="46.6667" height="23.3333" rx="11.6667" />
+  </g>
+  
+  <!-- Plus sign in orange -->
+  <g fill="#FF9800" transform="translate(352, 116)">
+    <rect x="0" y="18" width="56" height="18" rx="9" />
+    <rect x="19" y="0" width="18" height="56" rx="9" />
+  </g>
+  
+  <!-- Visão+ text at the bottom -->
+  <text x="256" y="380" font-family="Poppins, sans-serif" font-size="48" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+    Visão<tspan fill="#FF9800">+</tspan>
+  </text>
+</svg>
